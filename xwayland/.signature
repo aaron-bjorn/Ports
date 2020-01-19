@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/jmf.pub
+RWQhc2QeFyS6e/Z3YspjU80dMtplR3tBgEBwFDF87JIzE/wCyKKFfsNa8i7J/svwcVUfft5Qr4hakcuXoyYzTKOKCDMTrIEhbA4=
+SHA256 (Pkgfile) = 9f77ec49410ad8c67be0e3c48ae730fc83356a298260459e399836791582545a
+SHA256 (.footprint) = 7b4e40a5756701c6fdc246ee7c65772da9f319012144354628883f2794514901
+SHA256 (xorg-server-1.20.4.tar.bz2) = fe0fd493ebe93bfc56bede382fa204458ff5f636ea54d413a5d1bd58e19166ee

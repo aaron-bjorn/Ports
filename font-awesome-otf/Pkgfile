@@ -1,0 +1,15 @@
+# Description: Awesome iconic font designed for Bootstrap
+# URL:         https://fontawesome.com/
+# Maintainer:  Seif Lekbir, seiflek(at)zoho(dot)com
+# Depends on:  fontconfig
+
+name=font-awesome-otf
+version=5.3.1
+release=1
+source=(https://github.com/FortAwesome/Font-Awesome/archive/$version/font-awesome-$version.tar.gz)
+
+build() {
+	cd Font-Awesome-$version
+	install -d $PKG/usr/share/fonts/OTF
+	install -m644 ./use-on-desktop/*.otf $PKG/usr/share/fonts/OTF
+}

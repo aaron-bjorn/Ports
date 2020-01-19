@@ -1,0 +1,17 @@
+# Description: An i3-compatible wayland compositor.
+# URL:         https://swaywm.org/
+# Maintainer:  Jan-Michael Franz, jmf at mesecons dot net
+# Depends on:  gdk-pixbuf json-c meson pango wlroots
+
+name=sway
+version=1.0
+release=1
+source=(https://github.com/swaywm/sway/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+	meson build --prefix=/usr
+	ninja -C build
+	DESTDIR=$PKG ninja -C build install
+	chmod a+s $PKG/usr/bin/sway
+}

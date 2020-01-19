@@ -1,0 +1,13 @@
+# Description: Papirus icon theme
+# URL:         https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/
+# Maintainer:  Seif Lekbir, seiflek(at)zoho(dot)com
+
+name=papirus-icon-theme
+version=20180816
+release=1
+source=(https://github.com/PapirusDevelopmentTeam/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make DESTDIR=$PKG PREFIX=/usr install
+}

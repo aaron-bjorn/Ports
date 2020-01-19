@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/jmf.pub
+RWQhc2QeFyS6e/kJWYcNTkkI/Ed8vsIqs9RpsVH8XRcMgFlcqVrQgghvuOyxF690imCgYoTWOWAsSDVE19v2w4qStOOkEU+yDAA=
+SHA256 (Pkgfile) = dfa2a5e04c4396350cef49e08a3fa68841e30666ddb8a5b57ea498e2450da6e4
+SHA256 (.footprint) = 932170cbd5b3f7dcb7d88d2ef8cbbd6433bd28e5d609774991aeeeaf0391931b
+SHA256 (wayland-1.17.0.tar.xz) = 72aa11b8ac6e22f4777302c9251e8fec7655dc22f9d94ee676c6b276f95f91a4

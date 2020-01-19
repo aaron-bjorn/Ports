@@ -1,0 +1,41 @@
+From c9b4f92abc273022637fcb4790ff6f7fd35cd36d Mon Sep 17 00:00:00 2001
+From: Aidan Holm <aidanholm@gmail.com>
+Date: Fri, 25 Aug 2017 02:14:14 +0800
+Subject: [PATCH] Fix chrome pages breaking when not using LuaJIT (#466)
+
+---
+ CHANGELOG.md   | 1 +
+ lib/chrome.lua | 5 +++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index 2b751472..5616a056 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -46,6 +46,7 @@
+  - Fixed log page bug when logging messages with newlines.
+  - Fixed `Up` and `Down` keybindings being broken on completion menu.
+  - Fixed hardcoded path to luakit icon.
++ - Fixed luakit:// pages not working and spewing errors when not using LuaJIT.
+ 
+ ## [2017-08-10]
+ 
+diff --git a/lib/chrome.lua b/lib/chrome.lua
+index d6575867..3776daad 100644
+--- a/lib/chrome.lua
++++ b/lib/chrome.lua
+@@ -307,8 +307,9 @@ wm:add_signal("function-call", function (_, page_id, page_name, func_name, id, a
+         end
+     end
+     -- Call Lua function, return result
+-    local ok, ret = xpcall(func, debug.traceback, view, unpack(args))
+-    if not ok then msg.error(ret) end
++    local ok, ret = xpcall(
++        function () return func(view, unpack(args)) end,
++        function (err)  msg.error(debug.traceback(err, 3)) end)
+     wm:emit_signal(view, "function-return", id, ok, ret)
+ end)
+ 
+-- 
+2.14.2
+

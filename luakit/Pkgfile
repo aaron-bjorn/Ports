@@ -1,0 +1,18 @@
+# Description: A fast, extensible, and customizable web browser.
+# URL:         https://luakit.github.io/
+# Maintainer:  John Vogel, jvogel4 at stny dot rr dot com
+# Depends on:  lua51-luafilesystem webkitgtk
+
+name=luakit
+version=2.1
+release=1
+source=(https://github.com/$name/$name/archive/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make USE_LUAJIT=0 PREFIX=/usr
+	make USE_LUAJIT=0 PREFIX=/usr DESTDIR=$PKG install
+
+	find $PKG \( -name 'AUTHORS' -o -name 'COPYING*' -o -name 'README*' \) -delete
+}

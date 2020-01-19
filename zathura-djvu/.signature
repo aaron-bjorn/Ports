@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/j_v.pub
+RWQxYrjprOM1xLpwE1dql9yHLlacPc6Xs9zqFYTNLTcRTq4L6fRpYGVl2dPFhn6zXNNARoNegWobigp+IiXC4MJyVJX9L3EQnQc=
+SHA256 (Pkgfile) = 83c34518c4fa17b4f8b30710c6c92acbd6d6795eaffce9ff6b2abb1bbe6b242a
+SHA256 (.footprint) = f8941046f8bf067a168dd9b368e508e9cc60413ab322f63898f784975f3f4f49
+SHA256 (zathura-djvu-0.2.8.tar.xz) = d0e664d5312bdc0674fdf8cc6e259c9ee1365714172bc809f9c0f69659d8b32b

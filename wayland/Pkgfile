@@ -1,0 +1,17 @@
+# Description: A simpler replacement for X.
+# URL:         https://wayland.freedesktop.org/
+# Maintainer:  Jan-Michael Franz, jmf at mesecons dot net
+# Depends on:  expat libffi libxml2
+
+name=wayland
+version=1.17.0
+release=1
+source=(https://wayland.freedesktop.org/releases/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr --enable-autotools --disable-documentation
+	make
+	make DESTDIR=$PKG install
+}
+
